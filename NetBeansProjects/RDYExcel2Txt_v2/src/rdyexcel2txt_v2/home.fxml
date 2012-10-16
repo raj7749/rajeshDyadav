@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="1.0" prefHeight="332.0" prefWidth="600.0" rotate="0.0" xmlns:fx="http://javafx.com/fxml" fx:controller="rdyexcel2txt_v2.homeController">
+  <children>
+    <Button fx:id="btnInputFile" layoutX="29.0" layoutY="97.0" mnemonicParsing="false" text="Input Excel File" />
+    <Button fx:id="btnProcess" layoutX="29.0" layoutY="165.0" mnemonicParsing="false" onAction="#processOperation" text="Process" />
+    <TextField id="inputFile" fx:id="txtInputFile" editable="true" layoutX="29.0" layoutY="118.0" opacity="1.0" prefWidth="556.0" />
+    <Label layoutX="29.0" layoutY="67.0" prefWidth="199.0" text="Enter First Columns Row No." />
+    <TextField id="rowNo" fx:id="txtRowNo" layoutX="229.0" layoutY="63.0" prefWidth="58.0" />
+    <Label layoutX="29.0" layoutY="14.0" text="Excel to Text" underline="true">
+      <font>
+        <Font size="22.0" />
+      </font>
+    </Label>
+    <Label fx:id="lblStatus" alignment="TOP_LEFT" layoutX="29.0" layoutY="239.0" prefHeight="79.0" prefWidth="556.0" text="Choose Input File" />
+  </children>
+  <effect>
+    <SepiaTone />
+  </effect>
+</AnchorPane>
