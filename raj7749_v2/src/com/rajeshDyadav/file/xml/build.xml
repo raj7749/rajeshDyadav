@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<project basedir="." default="build" name="RAJ">
+	<property file="build.properties" />
+
+	<path id="RAJ.CLASSPATH">
+		<fileset dir="${RAJ.dependlibs}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+	
+	<target name="clean">				
+		<mkdir dir="${RAJ.buildclassfiles}"/>
+		<mkdir dir="${RAJ.destdir}"/>
+	</target>
+	
+	<target name="compile" depends="clean">		
+		<javac srcdir="${RAJ.srcdir}" destdir="${RAJ.buildclassfiles}" includeantruntime="true">
+			<classpath refid="RAJ.CLASSPATH" />
+		</javac>
+	</target>
+	
+	<target name="build" depends="compile">		
+		<jar basedir="${RAJ.buildclassfiles}" destfile="${RAJ.jarfilename}" />
+		<copy todir="${RAJ.destdir}">
+			<fileset dir="${basedir}">
+				<include name="ColumnNames.xml"/>
+			</fileset>
+		</copy>
+		<delete dir="${RAJ.buildclassfiles}" />
+	</target>
+</project>
